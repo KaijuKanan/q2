@@ -1,42 +1,46 @@
 #include "complexNumber.h"
-
-ComplexNumber::ComplexNumber(){
+template <class T1, class T2>
+ComplexNumber<class T1, class T2>::ComplexNumber(){
     real = imaginary = 0;
 }
-ComplexNumber::ComplexNumber(int r, int i){
+template <class T1, class T2>
+ComplexNumber<class T1, class T2>::ComplexNumber(T1 r, T2 i){
     real = r;
     imaginary = i;
 }
-ComplexNumber::ComplexNumber(const ComplexNumber& rhs){
+template <class T1, class T2>
+ComplexNumber<class T1, class T2>::ComplexNumber(const ComplexNumber& rhs){
     real = rhs.real;
     imaginary = rhs.imaginary;
 }
-
-int ComplexNumber::getReal(){
+template <class T1, class T2>
+int ComplexNumber<class T1, class T2>::getReal(){
     return real;
 }
-int ComplexNumber::getImaginary(){
+template <class T1, class T2>
+int ComplexNumber<class T1, class T2>::getImaginary(){
     return imaginary;
 }
-
-void ComplexNumber::setReal(int r){
+template <class T1, class T2>
+void ComplexNumber<class T1, class T2>::setReal(T1 r){
     real = r;
 }
-void ComplexNumber::setImaginary(int i){
+template <class T1, class T2>
+void ComplexNumber<class T1, class T2>::setImaginary(T2 i){
     imaginary =i;
 }
 
 
 ComplexNumber ComplexNumber::operator +(const ComplexNumber& rhs){
-    int tempR = real;
-    int tempI = imaginary;
+    T1 tempR = real;
+    T2 tempI = imaginary;
     tempR += rhs.real;
     tempI += rhs.imaginary;
     return ComplexNumber(tempR, tempI);
 }
 ComplexNumber ComplexNumber::operator -(const ComplexNumber& rhs){
-    int tempR = real;
-    int tempI = imaginary;
+    T1 tempR = real;
+    T2 tempI = imaginary;
     tempR -= rhs.real;
     tempI -= rhs.imaginary;
     return ComplexNumber(tempR, tempI);
